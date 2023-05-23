@@ -1,0 +1,24 @@
+id: 55b1b909-3df2-4169-967b-411206fddcf3
+timestamp: 2023-05-23T14:09:34Z
+username: guest
+source: TAP-GUI
+accelerator:
+  name: tanzu-java-web-app
+  source:
+    image: us-central1-docker.pkg.dev/tap-sandbox-dev/tap-bits/tap-packages@sha256:28e34f0cbf0de2c6f317ea870caf21b79aa52a5359c28666a6ceec90184eb409
+fragments:
+  - name: build-wrapper-maven
+    source:
+      image: us-central1-docker.pkg.dev/tap-sandbox-dev/tap-bits/tap-packages@sha256:195a3ca6585fa91c41292584a19c2807c72ecdf986ce860a7147451e89d467d4
+  - name: java-version
+    source:
+      image: us-central1-docker.pkg.dev/tap-sandbox-dev/tap-bits/tap-packages@sha256:fa976ccf1609cb69e74a0162f0f49581fd0d393003e2fbe5d54d12eae62b4ff9
+  - name: tap-workload
+    source:
+      image: us-central1-docker.pkg.dev/tap-sandbox-dev/tap-bits/tap-packages@sha256:dbf0dedb6848ad8a7704c1c19465a1ddae9039b0e63c1dd0df3e2ed9cbda6093
+options:
+  includeBuildToolWrapper: false
+  javaVersion: 11
+  projectName: tanzu-java-web-app-workflow
+  repositoryPrefix: dev.tom
+  updateBoot3: false
